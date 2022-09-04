@@ -58,8 +58,8 @@ public class App
 
 
         // через деление)) и без применения третьей переменной
-        double m = 10.333;
-        double n = 52.46;
+        double m = 10.333f;
+        double n = 52.46f;
         m = m / n;
         n = n * m;
         m = n / m;
