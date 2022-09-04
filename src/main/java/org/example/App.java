@@ -22,8 +22,11 @@ public class App
         boolean B = false;
         System.out.println("Значение было A: " + A);
         System.out.println("Значение было B: " + B);
-        System.out.println("Значение стало A: " + !A);
-        System.out.println("Значение стало B: " + !B + "\n");
+        A = A ^ B;
+        B = B ^ A;
+        A = A ^ B;
+        System.out.println("Значение стало A: " + A);
+        System.out.println("Значение стало B: " + B + "\n");
 
         // через xor без третьей
 
@@ -38,7 +41,7 @@ public class App
         System.out.println("Значение стало b1: " + b1 + "\n");
 
         // через сложение)) и без применения третьей переменной
-        int e = 2147483647;
+        int e = 43;
         int f = 20;
         System.out.println("Значение было e: " + e);
         System.out.println("Значение было f: " + f);
@@ -47,8 +50,6 @@ public class App
         e = e - f; // от суммы отнимаем f получим для e значение бывшее у f
         System.out.println("Значение стало e: " + e);
         System.out.println("Значение стало f: " + f + "\n");
-
-        // вопрос почему не бывает переполнения? я для int е брал максимальное значение 2147483647 и ошибки не было!!!
 
 
         // еще вариант без использования третьей переменной
