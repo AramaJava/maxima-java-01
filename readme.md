@@ -1,2 +1,0 @@
-
-# maxima-java-01
