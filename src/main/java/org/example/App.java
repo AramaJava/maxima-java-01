@@ -6,18 +6,21 @@ public class App {
     public static void main(String[] args) {
 
         int arr1[] = {66799, 9999999, 12, 66799, 999999};
-        System.out.println(maxDigitsSumPosition(arr1));
+       // System.out.println(maxDigitsSumPosition(arr1));
 
-        System.out.println(daysCount((byte) 2, 2024));
+        //    System.out.println(daysCount((byte) 2, 2024));
 
         System.out.println(isSimple(5));
+        System.out.println(isSimple(3));
+        System.out.println(isSimple(9));
+        System.out.println(isSimple(77));
     }
 
 
     public static byte daysCount(byte month, int year) {
             switch (month) {
             case 2:
-                return (byte) (Vis_god2(year) ? 29 : 28); // проверка высокосного года
+                return (byte) (isVisgod(year) ? 29 : 28); // проверка высокосного года
             case 1:
             case 3:
             case 5:
@@ -46,18 +49,16 @@ public class App {
         } else return year % 100 != 0;
     }
 
-    public static boolean Vis_god2(int year) {
+    public static boolean isVisgod(int year) {
         return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
     }
 
     public static int isSimple(int n) {
-        int d = 2;
-        while (n % d != 0) {
-            d += 1;
-        }
-        return d==n ? 0 : d;
+         for (int i = 2; i < n; i++) {
+            if (n % i == 0) return  i;
+            }
+         return 0;
     }
-
     public static byte maxDigitsSumPosition (int[] arr) {
         int sumChisel = 0;
         int pos = 0;
